@@ -33,13 +33,38 @@
            margin-bottom: 1rem;
            width: 35%;
        }
+       section{
+           height: 500px;
+       }
+       #s1, #s3{
+            background-color: rgb(197, 143, 143);
+       }
+       #s2 , #s4{
+            background-color: rgb(103, 103, 214);
+       }
+       form{
+           padding:2rem;
+       }
+       input{
+           display: block;
+           padding: .5rem;
+           border-radius:5px;
+           margin-top: .5rem;
+           margin-bottom: .5rem;
+           border:none;
+           width: 200px;
+       }
+       input[type=submit]{
+           background-color: green;
+           color: white;
+       }
     </style>
 </head>
 <body>
     <nav>
         <h1>CRYPTO</h1>
     </nav>
-    <section>
+    <section id="s1">
         <p>Five ways to feel coder</p>
         <ol>
             <li class="coder-way">Use vscode</li>
@@ -49,7 +74,7 @@
             <li class="coder-way">Learn Coding</li>
         </ol>
     </section>
-    <section>
+    <section id="s2">
         <h1>About Me</h1>
         <p>        
             Lorem ipsum dolor sit amet consectetur adipisicing elit. 
@@ -58,8 +83,16 @@
             accusamus minus ipsa soluta ab illum nemo incidunt.
         </p>
     </section>
-    <section>
+    <section id="s3">
         <button id="btn-sub">Subcribe</button>
+    </section>
+    <section id="s4">
+        <form action="">
+            <input type="text" placeholder="enter ur name">
+            <input type="email"  placeholder="enter ur email">
+            <input type="text" placeholder="enter your contact number">
+            <input type="submit" value="send">
+        </form>
     </section>
 </body>
 </html>
