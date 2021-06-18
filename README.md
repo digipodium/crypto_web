@@ -1,0 +1,17 @@
+# project topics
+- # organic farming website
+- # Online quiz evaluation website
+- # Online Laundry service website
+- # Language & Frameworks Popularity Rating website
+- # Book sharing website
+- # Broadband comparison website
+- # Online Diet Consultation website
+- # Online Repair Service website for Electronics (ashi)
+- > Startup news website (shubham)
+- > Vet Care website (Pratyush)
+- > Sport news website (harsh)
+- > Travel Blog website(mihir)
+- > Cryptocurrency information provider website (aniket)
+- > Image Downloader website(Ali)
+- > Video Sharing website(rah)
+- > Grievance Website for Campus and College Hostel(sumit)

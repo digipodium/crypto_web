@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <style>
+        .header{
+            color: red;
+            background-color: burlywood;
+            padding: 1rem;
+            margin: 0;
+        }
+        body{
+            margin:0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="header">Welcome to Crypto web</h1>
+    <a href="{% url 'index' %}">Home</a><br>
+    <a href="{% url 'about' %}">About</a><br>
+    <a href="{% url 'tnc' %}">Terms & Condition</a><br>
+    {% block content %}
+    {% endblock content %}
+        
+</body>
+</html>
