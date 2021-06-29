@@ -1,29 +1,26 @@
 {% extends 'layout/base.html' %}
 {% load static %}
 {% block content %}
-    <style>
-        .box{
-            box-shadow: 1px 1px 7px #333;
-        }
-    </style>
+<style>
+    .box{
+        box-shadow: 1px 1px 7px #333;
+    }
+</style>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-lg-3 box">
-                <h3>The rise of Dogecoin</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis, dolorem necessitatibus, laboriosam obcaecati vero cumque enim corporis quaerat porro consequatur nostrum voluptatum distinctio minima accusamus blanditiis voluptas. Odio adipisci sapiente inventore impedit, porro ipsum nam voluptate aut minima numquam, possimus voluptatem. Repellendus quas, voluptas placeat adipisci architecto doloribus laudantium sit!</p>
+<div class="container">
+    <div class="row">
+        
+        {% for item in arts %}
+            <div class="col-md-4">
+                <img src="{{item.image.url}}"  alt="" height="100px">
+                <h1 class="display-4">{{item.title}}</h1>
+                <p>{{item.detail}}</p>
+                <p class="lead">{{item.author}}</p>
             </div>
-            <div class="col-md-6 col-lg-3 box">
-                <h3>the fall of Dogecoin</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis provident id architecto molestias expedita repudiandae saepe, eligendi laborum velit harum obcaecati aut modi? Iure velit commodi recusandae et perspiciatis quisquam sit nisi dolorum dignissimos alias ut optio, nostrum officiis aliquam ullam reprehenderit similique mollitia impedit non excepturi repellendus, quia distinctio!</p>
-            </div>
-            <div class="col-lg-6 box bg-warning">
-                <h1>What the heck is Dogecoin</h1>
-                <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil ipsam impedit quis, cum laborum voluptatibus, nulla placeat consequuntur velit ex esse commodi quam fugiat sequi in earum pariatur vel beatae error. Illo, quod officiis. Ducimus molestias consectetur laboriosam totam eos commodi dolor accusamus a, atque at nihil voluptas? Eos incidunt quibusdam ratione dignissimos ducimus odio voluptate ex exercitationem non ea minima animi dolores iste excepturi, quia debitis laudantium laboriosam deserunt ut quas quis vitae dolorem esse. Dolorem quia laudantium sapiente minus similique beatae distinctio deleniti quidem at architecto, facilis inventore doloribus ipsa? Laudantium commodi in, dolorum quaerat eos beatae vitae.</p>    
-            </div>
-        </div>
+        {% empty %}
+            <h3 class="display-2 text-center">No item found</h3>
+        {% endfor %}
+            
     </div>
-  
-    
+</div>
 {% endblock content %}
-    

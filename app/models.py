@@ -22,7 +22,7 @@ class Article(models.Model):
     date = DateTimeField(auto_now=True)
     author = CharField(max_length=25)
     category = CharField(max_length=10)
-    image = Image
+    image = models.ImageField(upload_to="articles",default="articles/default.jpg")
 
     class Meta:
         """Meta definition for Article."""
@@ -31,7 +31,6 @@ class Article(models.Model):
         verbose_name_plural = 'Articles'
 
     def __str__(self):
-        """Unicode representation of Article."""
-        pass
+        return self.title
 
 
