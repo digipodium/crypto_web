@@ -1,48 +1,124 @@
 {% extends 'layout/base.html' %}
 {% load static %}
-{% block content %}
-<style>
-    .box{
-        box-shadow: 1px 1px 7px #333;
-    }
-</style>
 
+
+{% block css %}
+    <style>
+        .section-2{
+            background-color: rgb(176, 234, 245);
+        }
+        .text-large{
+            font-size: larger;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+        .gradient-bg{
+            background-image: linear-gradient(49.21deg, 
+            rgba(127, 127, 213, 0.2) 19.87%, 
+            rgba(134, 168, 231, 0.2) 58.46%,
+            rgba(145, 234, 228, 0.2) 97.05%);
+        }
+        .card-gradient{
+           
+            background-color: transparent;
+            padding: 2rem;
+            height: 300px;
+            width: 400px;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            
+        }
+        .card{
+            border: 2px rgb(89, 118, 187) solid;
+        }
+    </style>
+{% endblock css %}
+    
+
+{% block content %}
 <div class="container">
     <div class="row">
-        
-        {% for item in arts %}
-            <div class="col-md-4">
-                <img src="{{item.image.url}}"  alt="" height="100px">
-                <h1 class="">{{item.title}}</h1>
-                <p>{{item.detail|truncatechars:100}}</p>
-                <p class="lead">{{item.author}}</p>
+        <div class="col px-0">
+            <img src="{% static 'images/An illustration of a futuristic city_ representing..png' %}" alt="hero image" class="img-fluid">
+        </div>
+    </div>
+    <div class="row ">
+        <div class="jumbotron jumbotron-fluid text-center my-5 ">
+            <div class="container">
+                <h1 class="display-4">Welcome to Cryptoweb</h1>
+                <p class="lead w-50 mx-auto">Cryptoweb is the community-run technology powering the cryptocurrency, ether (ETH) and thousands of decentralized applications.</p>
+                
+                <p class="lead mt-4">
+                    <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button">Explore Crptoweb</a>
+                </p>
             </div>
-        {% empty %}
-            <h3 class="display-2 text-center">No item found</h3>
-        {% endfor %}
-            
+        </div>
     </div>
 </div>
-<div class="container">
+<div class="container section-2">
     <div class="row">
-        
-        {% for item in arts %}
-        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div class="col p-4 d-flex flex-column position-static">
-              <strong class="d-inline-block mb-2 text-primary">{{item.category}}</strong>
-              <h3 class="mb-0">{{item.title}}</h3>
-              <div class="mb-1 text-muted">{{item.date.day}}</div>
-              <p class="card-text mb-auto">{{item.detail}}</p>
-              <a href="#" class="stretched-link">Continue reading</a>
+        <div class="col-sm-6">
+            <div class="p-5 mt-5">
+                <h1>Get started</h1>
+                <p class="text-large">
+                    ethereum.org is your portal into the world of Ethereum. 
+                    The tech is new and ever-evolving – it helps to have a guide. 
+                    Here's what we recommend you do if you want to dive in.
+                </p>
             </div>
-            <div class="col-auto d-none d-lg-block bg-dark">
-                <img src="{{item.image.url}}" width="300px" height="300px" alt="{{item.title}}">
+        </div>
+        <div class="col-sm-6">
+            <img src="{% static 'images/Illustration of a person working on a computer..png' %}" class="img-fluid" alt="">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card  my-2">
+                <div class="gradient-bg">
+                    <img class="card-img-top card-gradient " src="{% static 'images/Illustration of a robot with a vault for a_y..png' %}" alt="">
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Pick a Wallet</h4>
+                    <p class="card-text">A wallet lets you connect to Ethereum and manage your funds.</p>
+                </div>
             </div>
-          </div>
-        {% empty %}
-            
-        {% endfor %}
-            
+        </div>
+        <div class="col-sm-6">
+            <div class="card  my-2">
+                <div class="gradient-bg">
+                    <img class="card-img-top card-gradient " src="{% static 'images/Illustration of a group of people marvelling at_yyt..png' %}" alt="">
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Get ETH</h4>
+                    <p class="card-text">
+                        ETH is the currency of Ethereum – you can use it in applications.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card  my-2">
+                <div class="gradient-bg">
+                    <img class="card-img-top card-gradient " src="{% static 'images/Illustration of a doge using a computer..png' %}" alt="">
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Pick a Wallet</h4>
+                    <p class="card-text">A wallet lets you connect to Ethereum and manage your funds.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card  my-2">
+                <div class="gradient-bg">
+                    <img class="card-img-top card-gradient " src="{% static 'images/An illustration of a hand creating an ETH lo..png' %}" alt="">
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Pick a Wallet</h4>
+                    <p class="card-text">A wallet lets you connect to Ethereum and manage your funds.</p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock content %}
