@@ -1,5 +1,5 @@
 from django.db import models
-from django.db.models.fields import CharField, DateTimeField, TextField, URLField
+from django.db.models.fields import CharField, DateTimeField, EmailField, TextField, URLField
 
 # Create your models here.
 
@@ -34,3 +34,17 @@ class Article(models.Model):
         return self.title
 
 
+class Contact(models.Model):
+    
+    name = CharField(max_length=50)
+    email = EmailField()
+    phone = CharField(max_length=12)
+    message = TextField(max_length=1000)
+    date = DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = 'Contact'
+        verbose_name_plural = 'Contacts'
+
+    def __str__(self):
+        return f"contact message from {self.name}"
