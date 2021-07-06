@@ -6,6 +6,7 @@ from django.db.models.fields import CharField, DateTimeField, EmailField, TextFi
 class Currency(models.Model):
     name = CharField(max_length=25)
     website = URLField(max_length=255)
+    icon = models.ImageField(upload_to='cryptocurrency',default="crypto.png")
     added_on = DateTimeField(auto_now=True)
     class Meta:
         verbose_name = 'Currency'

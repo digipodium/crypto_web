@@ -50,7 +50,7 @@
                 <p class="lead w-50 mx-auto">Cryptoweb is the community-run technology powering the cryptocurrency, ether (ETH) and thousands of decentralized applications.</p>
                 
                 <p class="lead mt-4">
-                    <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button">Explore Crptoweb</a>
+                    <a class="btn btn-primary btn-lg" href="{% url 'currency_view' %}" role="button">Explore Crptoweb</a>
                 </p>
             </div>
         </div>
@@ -79,8 +79,9 @@
                     <img class="card-img-top card-gradient " src="{% static 'images/Illustration of a robot with a vault for a_y..png' %}" alt="">
                 </div>
                 <div class="card-body">
-                    <h4 class="card-title">Pick a Wallet</h4>
-                    <p class="card-text">A wallet lets you connect to Ethereum and manage your funds.</p>
+                    <h4 class="card-title">Add your Article</h4>
+                    <p class="card-text">Tell us about the latest stories from crypto world </p>
+                    <a class="btn btn-primary" href="{% url 'article_add' %}" role="button">Write article</a>
                 </div>
             </div>
         </div>

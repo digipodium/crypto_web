@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render
-from .models import Article
+from .models import Article,Currency
 from .forms import ArticleForm, ContactForm
 from django.contrib import messages
 
@@ -42,4 +42,22 @@ def contact(request):
         'title':'contact page',
     }
     return render(request,"contact.html",ctx)
+
+def search_article(request):
+    q = request.GET.get('query')
+    results = Article.objects.filter(title__contains=q)
+    ctx = {
+        'title':'search results',
+        'results':results,
+        'query':q,
+    }
+    return render(request, "search.html",ctx)
+
+def currency_view(request):
+    data = Currency.objects.all()
+    ctx = {
+        'title':"explore",
+        'currencies':data,
+    }
+    return render(request,"currency_view.html",ctx)
 

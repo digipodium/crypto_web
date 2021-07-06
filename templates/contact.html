@@ -2,6 +2,22 @@
 {% load crispy_forms_tags %}
 
 
+{% block css %}
+    <style>
+        #id_name{
+            background-color: rgb(240, 236, 231);
+            transition: all 200ms ease;
+        }
+        #id_name:hover, #id_name:focus{
+            transform: scale(1.03);
+            background-color: rgb(12, 16, 146);
+            color: white;
+        }
+
+    </style>
+{% endblock css %}
+    
+
 {% block content %}
     <div class="container">
         <div class="row">

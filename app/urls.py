@@ -9,4 +9,6 @@ urlpatterns = [
     path('terms/',TemplateView.as_view(template_name='tnc.html'),name='tnc'),
     path('article/add',views.article_add, name="article_add"),
     path('contact/',views.contact,name='contact'),
+    path('search/',views.search_article,name="search"),
+    path('currency/view',views.currency_view,name='currency_view'),
 ]
