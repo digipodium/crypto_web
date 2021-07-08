@@ -25,7 +25,7 @@ def article_add(request):
         "form":form,
         "title":"Add new article"
     }
-    return render(request,"article_add.html",ctx)
+    return render(request,"article/article_add.html",ctx)
 
 def contact(request):
     form = ContactForm()
@@ -60,4 +60,56 @@ def currency_view(request):
         'currencies':data,
     }
     return render(request,"currency_view.html",ctx)
+
+def article_view(request):
+    articles = Article.objects.all()
+    ctx = {
+        'title':"all articles",
+        'articles':articles,
+    }
+    return render(request,"article/article_view.html",ctx)
+
+def article_detail(request,id):
+    try:
+        article = Article.objects.get(id=id)
+        ctx ={
+            'title':"article detail",
+            'article':article,
+        }
+        return render(request,"article/article_detail.html",ctx)
+    except:
+        return redirect("article_view")
+
+def article_delete(request,id):
+    try:
+        Article.objects.get(id=id).delete()
+        messages.success(request,"article deleted successfully")
+        return redirect("article_view")
+    except Exception as e:
+        print(e)
+        messages.error(request,"article could not be deleted!")
+        return redirect("article_detail",id=id)
+
+def article_edit(request,id):
+    try:
+        article = Article.objects.get(id=id)
+        if request.method == "POST":
+            form = ArticleForm(request.POST,request.FILES,instance=article)
+            if form.is_valid():
+                form.save()
+                messages.success(request,"article updated successfully")
+                return redirect("article_detail",id=id)
+            else:
+                messages.error(request,"article update error")
+        else:
+            form = ArticleForm(instance=article)
+        ctx = {
+            'title':"article edit",
+            'form':form,
+            'id':id,
+        }
+        return render(request,"article/article_edit.html",ctx)
+    except Exception as e:
+        print(e)
+        return redirect("article_view")
 
