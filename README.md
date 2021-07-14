@@ -1,12 +1,5 @@
 # project topics
-- # organic farming website
-- # Online quiz evaluation website
-- # Online Laundry service website
-- # Language & Frameworks Popularity Rating website
-- # Book sharing website
-- # Broadband comparison website
-- # Online Diet Consultation website
-- # Online Repair Service website for Electronics (ashi)
+- > Online Repair Service website for Electronics (ashi)
 - > Startup news website (shubham)
 - > Vet Care website (Pratyush)
 - > Sport news website (harsh)
